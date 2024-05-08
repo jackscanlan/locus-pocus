@@ -1,13 +1,38 @@
 # Locus-Pocus
 Tools for finding and extracting barcoding and other taxonomically informative loci
 
+> There's nothing really here yet! I'm just trying to get my thoughts together on the best way to approach building these tools.
+
+### Intended usages
+
+Aligning sequences (from small regions/contigs, to organelles/plasmids, to complete assemblies)
+- Use [PGGB](https://github.com/pangenome/pggb) for whole genomes
+    - [Estimate divergence](https://pggb.readthedocs.io/en/latest/rst/tutorials/divergence_estimation.html) across all input sequences to guide the selection of appropriate parameters 
+    - Discard regions that have presence-absence in one or more samples, unless that occurs in a flagged 'low-quality' sample that may be incomplete
+- Use MAFFT for small regions with known colinearity, or minimap2 for larger regions with no assumption of 
+- Conversion of MAF to MSA format?
+    - [mafTools](https://github.com/dentearl/mafTools) could be useful
+
+Find regions in alignments that resolve known splits between inputs, i.e. contain taxonomically or diagnostically informative information
+- Inputs/parameters:
+    - One or more MSAs (user-made or from package)
+    - Sequence groupings (phylogenetic tree or list of groups); default is to assume all sequences must be distinct from each other
+        - for example, multiple sequences from the same species (an 'allowed non-distinct group') can be grouped so that the distinct locus doesn't separate members of the group
+    - Maximum size of output locus
+- Outputs:
+    - MSA subset that contains the discriminating locus
+    - Conserved regions that could be useful for primer-binding?
+    - Distance tree of samples based solely on output locus sequence (ie. showing it works), optionally coloured by allowed groupings 
+
+Find and extract specified loci from one or more genome assemblies or transcriptomes
+- Inputs:
+    - profile Hidden Markov Model (pHMM) of the sequence to be searched for (see [Barrnap](https://github.com/tseemann/barrnap) for similar idea)
+        - Alternatively, a .fasta of trusted sequences that can be used to generate a pHMM
+    - Assemblies available locally or with accession for download from public repository
+    - 
 
 
-Aims:
-- Align sequences (from small regions, to organelles, to complete assemblies)
 
-
-
-### inspiration
+### Inspiration/related projects
 - Ribosomal Operon Database ([ROD](https://github.com/krabberod/ROD))
     - see preprint: https://www.biorxiv.org/content/10.1101/2024.04.19.590225v1
