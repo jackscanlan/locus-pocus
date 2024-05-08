@@ -9,7 +9,7 @@ Aligning sequences (from small regions/contigs, to organelles/plasmids, to compl
 - Use [PGGB](https://github.com/pangenome/pggb) for whole genomes
     - [Estimate divergence](https://pggb.readthedocs.io/en/latest/rst/tutorials/divergence_estimation.html) across all input sequences to guide the selection of appropriate parameters 
     - Discard regions that have presence-absence in one or more samples, unless that occurs in a flagged 'low-quality' sample that may be incomplete
-- Use MAFFT for small regions with known colinearity, or minimap2 for larger regions with no assumption of 
+- Use MAFFT for small regions with known total colinearity (i.e. only SNPs and indels allowed), or minimap2 for larger regions with no assumption of colinearity (ie. rearrangements allowed)
 - Conversion of MAF to MSA format?
     - [mafTools](https://github.com/dentearl/mafTools) could be useful
 
@@ -28,8 +28,9 @@ Find and extract specified loci from one or more genome assemblies or transcript
 - Inputs:
     - profile Hidden Markov Model (pHMM) of the sequence to be searched for (see [Barrnap](https://github.com/tseemann/barrnap) for similar idea)
         - Alternatively, a .fasta of trusted sequences that can be used to generate a pHMM
-    - Assemblies available locally or with accession for download from public repository
-    - 
+    - Assemblies available locally or with accessions for download from public repositories
+- Needs method to parse multiple hits (multi-copy loci)
+- If phylogeny of sequences is input, do a 'sanity check' to see if the distance tree from the final loci sequences is similar to the input phylogeny?
 
 
 
