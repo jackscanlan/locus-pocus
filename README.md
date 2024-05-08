@@ -1,5 +1,5 @@
 # Locus-Pocus
-Tools for finding extracting barcoding and other taxonomically informative loci from genome assemblies
+Tools for finding and extracting barcoding and other taxonomically informative loci
 
 
 
