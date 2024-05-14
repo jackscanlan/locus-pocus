@@ -31,6 +31,8 @@ Find and extract specified loci from one or more genome assemblies or transcript
     - Assemblies available locally or with accessions for download from public repositories
 - Needs method to parse multiple hits (multi-copy loci)
 - If phylogeny of sequences is input, do a 'sanity check' to see if the distance tree from the final loci sequences is similar to the input phylogeny?
+- Mode to pull out pseudogenes to add to a 'decoy' database - ie. known pseudogenous barcode sequences from genomes that we don't want to assume are novel taxa
+    - If sequence is similar but fails pHMM (contains frameshifts etc.), add to this? 
 
 
 
