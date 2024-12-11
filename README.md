@@ -12,6 +12,7 @@ Aligning sequences (from small regions/contigs, to organelles/plasmids, to compl
 - Use MAFFT for small regions with known total colinearity (i.e. only SNPs and indels allowed), or minimap2 for larger regions with no assumption of colinearity (ie. rearrangements allowed)
 - Conversion of MAF to MSA format?
     - [mafTools](https://github.com/dentearl/mafTools) could be useful
+ - LAST seems good: https://gitlab.com/mcfrith/last/-/blob/main/doc/last-cookbook.rst
 
 Find regions in alignments that resolve known splits between inputs, i.e. contain taxonomically or diagnostically informative information
 - Inputs/parameters:
